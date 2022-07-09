@@ -1,0 +1,17 @@
+# Django stuff
+*.log
+db.sqlite3
+
+# cache and compiled bytecode
+__pycache__
+*.pyc
+
+# environments
+.env
+.venv
+env/
+venv/
+myvenv/
+env.bak/
+venv.bak/
+myvenv.bak/
