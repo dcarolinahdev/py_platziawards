@@ -1,6 +1,9 @@
 # Platzi awards app
 a poll app
 
+## Requirements and versions
+- ***Django=3.2.9***
+
 ---
 ---
 
