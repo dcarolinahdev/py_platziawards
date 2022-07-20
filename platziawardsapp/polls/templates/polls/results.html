@@ -1,7 +1,19 @@
-<h1>{{ question.question_text }}</h1>
-<ul>
-    {% for choice in question.choice_set.all %}
-        <li>{{ choice.choice_text }} -- {{ choice.votes }} voto{{ choice.votes|pluralize }}</li>
-    {% endfor %}
-</ul>
-<a href="{% url 'polls:detail' question.id %}">¿Te gustaría votar de nuevo?</a>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>Platzi Awards | Question</title>
+    <link rel="stylesheet" href="{% static 'polls/css/style.css' %}">
+{% endblock %}
+
+{% block container %}
+    <div class="center-polls center-polls-v">
+        <h1>{{ question.question_text }}</h1>
+        <ul>
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }} -- {{ choice.votes }} voto{{ choice.votes|pluralize }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'polls:detail' question.id %}">¿Te gustaría votar de nuevo?</a>
+    </div>
+{% endblock %}

@@ -1,27 +1,39 @@
-<form action="{% url 'polls:vote' question.id %}" method="POST">
-    {% csrf_token %}
-    <fieldset>
-        <legend><h1>{{ question.question_text }}</h1></legend>
+{% extends 'base.html' %}
+{% load static %}
 
-        {% if error_message %}
-            <p><strong>{{ error_message }}</strong></p>
-        {% endif %}
+{% block head_content %}
+    <title>Platzi Awards | Question</title>
+    <link rel="stylesheet" href="{% static 'polls/css/style.css' %}">
+{% endblock %}
 
-        {% for choice in question.choice_set.all %}
-            <input
-                type="radio"
-                name="choice"
-                id="choice{{ forloop.counter }}"
-                value="{{ choice.id }}"
-            >
-            <label for="choice{{ forloop.counter }}">
-                {{ choice.choice_text }}
-            </label>
-            <br>
-        {% endfor %}
-    </fieldset>
-    <input type="submit" value="Votar">
-</form>
+{% block container %}
+    <div class="center-polls">
+        <form action="{% url 'polls:vote' question.id %}" method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h1>{{ question.question_text }}</h1></legend>
+
+                {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+                {% endif %}
+
+                {% for choice in question.choice_set.all %}
+                    <input
+                        type="radio"
+                        name="choice"
+                        id="choice{{ forloop.counter }}"
+                        value="{{ choice.id }}"
+                    >
+                    <label for="choice{{ forloop.counter }}">
+                        {{ choice.choice_text }}
+                    </label>
+                    <br>
+                {% endfor %}
+            </fieldset>
+            <input type="submit" value="Votar">
+        </form>
+    </div>
+{% endblock %}
 
 <!--<h1>{{ question.question_text }}</h1>
 <ul>

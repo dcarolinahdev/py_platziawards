@@ -1,9 +1,21 @@
-{% if latest_question_list %}
-<ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No polls are available.</p>
-{% endif %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <title>Platzi Awards</title>
+    <link rel="stylesheet" href="{% static 'polls/css/style.css' %}">
+{% endblock %}
+
+{% block container %}
+    <div class="center-polls">
+        {% if latest_question_list %}
+        <ul>
+            {% for question in latest_question_list %}
+                <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No polls are available.</p>
+        {% endif %}
+    </div>
+{% endblock %}

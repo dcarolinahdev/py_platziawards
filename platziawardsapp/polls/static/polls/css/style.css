@@ -1,0 +1,45 @@
+:root
+{
+    --gray-blue: #828282;
+}
+
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html
+{
+    font-size: 62.5%;
+}
+
+/*tag {
+    background: white url("../img/wallp_awards.jpg") no-repeat;
+}*/
+
+.container > .center-polls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50vh;
+    font-size: 1.8rem;
+}
+
+.center-polls-v {
+    flex-direction: column;
+}
+
+.center-polls ul {
+    list-style-type: none;
+}
+
+form h1 {
+    color: var(--gray-blue);
+}
+
+li, li a, form label {
+    color: green;
+}
