@@ -1,8 +1,26 @@
 # Platzi awards app
-a poll app
+a poll app based on official Django documentation, it includes topics as:
+
+- Models
+- Views (function base views and class based views)
+- Templates (with template inheritance based on jinja 2)
+- Forms (forms.Form and form.ModelForm)
+- Static Files
+- Media files
+- Django admin
+- Django authentication
+- Unit test
 
 ## Requirements and versions
 - ***Django=3.2.9***
+
+## Notes
+
+- Remember run test as `python3 manage.py test <app_name>`
+
+```
+python3 manage.py test polls
+```
 
 ---
 ---
