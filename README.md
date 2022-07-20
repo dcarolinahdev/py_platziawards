@@ -22,6 +22,14 @@ a poll app based on official Django documentation, it includes topics as:
 python3 manage.py test polls
 ```
 
+- TO-DO: tests for ResultsView.
+
+    * test_question_not_exist
+    * test_future_question
+    * test_past_question
+
+- TO-DO: tests for Questions without Choices.
+
 ---
 ---
 
