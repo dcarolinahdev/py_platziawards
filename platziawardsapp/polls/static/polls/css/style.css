@@ -1,5 +1,8 @@
 :root
 {
+    --green-dark: #0F3B11;
+    --green-med: #26862b;
+    --sea-shadow: #2b665e;
     --gray-blue: #828282;
 }
 
@@ -10,36 +13,73 @@
     margin: 0;
 }
 
+/* ---------- main ---------- */
 html
 {
     font-size: 62.5%;
 }
 
-/*tag {
-    background: white url("../img/wallp_awards.jpg") no-repeat;
-}*/
-
-.container > .center-polls {
+body
+{
     display: flex;
+    flex-direction: column;
+    height: 80vh;
+
     align-items: center;
     justify-content: center;
 
-    min-height: 50vh;
-    font-size: 1.8rem;
-}
-
-.center-polls-v {
-    flex-direction: column;
-}
-
-.center-polls ul {
-    list-style-type: none;
-}
-
-form h1 {
-    color: var(--gray-blue);
-}
-
-li, li a, form label {
+    font-family: Arial, Helvetica, sans-serif;
     color: green;
+}
+
+/* ---------- content ---------- */
+h1
+{
+    color: var(--green-dark);
+    margin-bottom: 1rem;
+}
+
+/* lists */
+main ul li a
+{
+    color: green;
+}
+
+main ul
+{
+    list-style-type: none;
+    margin-bottom: 2rem;
+}
+
+/* form button */
+form > input, main > a
+{
+    box-shadow: inset 0px 1px 3px 0px var(--sea-shadow-soft);
+    background: var(--green-dark);
+    border-radius: 5px;
+    border: 1px solid var(--gray-blue);
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: white;
+    text-shadow: 0px -1px 0px var(--sea-shadow);
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+main a
+{
+    text-decoration: none;
+}
+
+/* ---------- footer ---------- */
+footer
+{
+    display: flex;
+    justify-content: center;
+}
+
+footer > a
+{
+    color: var(--green-dark);
+    text-decoration: none;
 }
